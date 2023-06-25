@@ -1,0 +1,11 @@
+{
+  "name": "utils-generator",
+  "version": "0.0.1",
+  "description": "utils generator qr, weather, to-do",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "author": "",
+  "license": "ISC"
+}
