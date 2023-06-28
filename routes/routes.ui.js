@@ -7,6 +7,18 @@ router.get("/", (req,res) => {
     res.render("index");
 });
 
+router.get("/about", (req,res) => {
+    res.render("about");
+})
+
+router.get("/products", (req,res) => {
+    res.render("products");
+})
+
+router.get("/single-product", (req,res) => {
+    res.render("single-product");
+})
+
 router.get("/contact", (req,res) => {
     res.render("contact");
 })
