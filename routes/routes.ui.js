@@ -23,6 +23,7 @@ router.get("/contact", (req,res) => {
     res.render("contact");
 })
 
+
 router.get("/converter/:currency1/:currency2/:value", async(req,res) => {
     const {currency1, currency2, value } = req.params;
     

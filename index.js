@@ -8,7 +8,7 @@ const app = express();
 const indexRouter = require("./routes");
 
 // app.use((req,res,next)=>{
-//     console.log("Request Received at " +Date.now());
+//     console.log("Request Received at " + Date.now());
 //     next();
 // });
 
@@ -23,7 +23,18 @@ app.set("views", "./views");
 //serving the static file
 app.use(express.static("public"));
 
+//testing application level error handling
+app.get("/broken", (req,res,next) => {
+    throw new Error("Broken");
+});
+
 app.use("/",indexRouter);
+
+// application level error handling
+app.use((err,req,res,next)=>{
+    console.log(err);
+    res.status(500).send('Something Broke!');
+});
 
 app.listen(8000, () => {
     console.log("Server running on port 8000");
